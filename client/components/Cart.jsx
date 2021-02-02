@@ -6,7 +6,7 @@ import Info from './Info';
 import Selector from './Selector';
 import ExtDetails from './ExtDetails';
 import Seller from './Seller';
-import BING_KEY from '../../keys/bing';
+import BING_KEY from '../../keys/api';
 
 class App extends React.Component {
   constructor() {

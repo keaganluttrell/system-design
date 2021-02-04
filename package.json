@@ -31,9 +31,11 @@
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
     "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "sequelize": "^6.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

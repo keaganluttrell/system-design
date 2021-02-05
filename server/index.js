@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const express = require('express');
 const compression = require('compression');
 // const Cart = require('../database/Cart');
@@ -10,16 +11,11 @@ app.use(compression());
 app.use(express.static('public'));
 
 app.get('/api/item/:itemID', (req, res) => {
-  //   Cart.CartModel.findById(req.params.itemID)
-  //     .then((result) => res.send(result))
-  //     .catch((err) => res.send(err));
-  // });
-
-  // app.get('/api/x/1', (req, res) => {
-  sequelize.query(`select * from data where _id = ${req.params.itemID}`)
+  sequelize.query(`select document from documents where _id = ${req.params.itemID}`)
     .then((item) => {
-      console.log(item[0][0].doc.shipping.origin);
-      res.send(item[0][0].doc);
+      const doc = { _id: req.params.itemID };
+      Object.assign(doc, item[0][0].document);
+      res.send(doc);
     })
     .catch((e) => res.send(e));
 });

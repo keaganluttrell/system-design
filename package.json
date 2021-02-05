@@ -4,7 +4,7 @@
   "description": "Is the Docer-Cart-Service",
   "main": "index.js",
   "scripts": {
-    "test": "jest /tests --collectCoverage",
+    "test": "jest /tests --collectCoverage --updateSnapshot",
     "start": "node server/index.js",
     "seed": "node server/seed/dummy-data.js",
     "watch": "webpack --watch"

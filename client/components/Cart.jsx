@@ -57,7 +57,8 @@ class App extends React.Component {
   }
 
   getData(zip) {
-    const randNum = Math.round(Math.random() * 99);
+    const randNum = Math.floor(Math.random() * 100) + 1;
+    console.log(randNum);
     axios.get(`/api/item/${randNum}`)
       // axios.get('/api/item/0')
       .then((item) => {

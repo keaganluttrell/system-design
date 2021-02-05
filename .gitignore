@@ -1,3 +1,5 @@
 node_modules
 keys/bing.js
 coverage
+app.js
+server/seed/output.txt

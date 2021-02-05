@@ -1,6 +1,6 @@
 const express = require('express');
 const compression = require('compression');
-const Cart = require('../database/Cart');
+const { cart } = require('../psql/db');
 
 const app = express();
 const port = 3003;
@@ -9,9 +9,15 @@ app.use(compression());
 app.use(express.static('public'));
 
 app.get('/api/item/:itemID', (req, res) => {
-  Cart.CartModel.findById(req.params.itemID)
-    .then((result) => res.send(result))
-    .catch((err) => res.send(err));
+  cart.query(`select document from documents where _id = ${req.params.itemID}`,
+    (err, data) => {
+      if (err) {
+        res.send(err);
+      }
+      const doc = { _id: req.params.itemID };
+      Object.assign(doc, data.rows[0].document);
+      res.send(doc);
+    });
 });
 
 app.listen(port, () => {

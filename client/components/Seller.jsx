@@ -69,6 +69,7 @@ class Seller extends React.Component {
   render() {
     const { seller, shopName } = this.props;
     const { name } = seller;
+    const { imageURL } = seller;
     const {
       arrowButton,
       policyCollap,
@@ -82,12 +83,11 @@ class Seller extends React.Component {
           <span className="seller-button-content">
             Meet your sellers
           </span>
-          <span className={arrowButton}>
-          </span>
+          <span className={arrowButton} />
         </button>
         <div className={policyCollap}>
           <div className="sellerContent">
-            <img src="https://picsum.photos/200" alt={name} />
+            <img src={imageURL} alt={name} />
             <div className="seller">
               {name}
               <br />
@@ -108,7 +108,7 @@ class Seller extends React.Component {
         </div>
         <div className={messageModal}>
           <div className="messageModal-title">
-            <img src="https://picsum.photos/200" alt={name} />
+            <img src={imageURL} alt={name} />
             <div className="modalSeller">
               {name}
               <span> </span>
@@ -131,11 +131,14 @@ class Seller extends React.Component {
               Typically responds within a few hours
             </div>
             <div id="wrapper">
-              {/* <button type="button" className="message-close-button" onClick={this.modalOnClick}>
+              {/* <button
+              type="button" className="message-close-button" onClick={this.modalOnClick}>
                 <span className="etsy-message-icon-button">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="11 0 1.8 1.8" aria-hidden="true" focusable="false">
                     <path
-                      d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z"
+                      d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,
+                      0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,
+                      6.293a1,1,0,0,0,1.414-1.414Z"
                     />
                   </svg>
                 </span>
@@ -170,6 +173,7 @@ class Seller extends React.Component {
 Seller.propTypes = {
   seller: PropTypes.shape({
     name: PropTypes.string,
+    imageURL: PropTypes.string,
   }),
   shopName: PropTypes.string,
 };

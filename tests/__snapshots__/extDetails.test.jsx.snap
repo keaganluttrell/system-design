@@ -369,7 +369,7 @@ exports[`extDetails render renders correctly 1`] = `
         <div
           id="shippedDate"
         >
-          Feb 7 - 13
+          Feb 8 - 14
         </div>
       </div>
       <div
@@ -411,7 +411,7 @@ exports[`extDetails render renders correctly 1`] = `
           <div
             className="icon-dates grid-3"
           >
-            Feb 4
+            Feb 5
           </div>
           <span
             className="dotted-shipping grid-3"
@@ -477,7 +477,7 @@ exports[`extDetails render renders correctly 1`] = `
           <div
             className="icon-dates grid-1"
           >
-            Feb 5 - 6
+            Feb 6 - 7
           </div>
           <span
             className="dotted-shipping grid-1"
@@ -536,7 +536,7 @@ exports[`extDetails render renders correctly 1`] = `
           <div
             className="icon-dates grid-2"
           >
-            Feb 7 - 13
+            Feb 8 - 14
           </div>
           <span
             className="dotted-shipping grid-2"
@@ -556,7 +556,7 @@ exports[`extDetails render renders correctly 1`] = `
                 <span>
                    
                 </span>
-                Feb 7 - Feb 13
+                Feb 8 - Feb 14
               </span>
             </span>
           </span>

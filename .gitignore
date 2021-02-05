@@ -1,5 +1,7 @@
 node_modules
-keys/bing.js
+keys
 coverage
 app.js
 server/seed/output.txt
+*.log
+newrelic.js

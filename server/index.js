@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const compression = require('compression');
 const { cart } = require('../psql/db');
@@ -9,7 +10,8 @@ app.use(compression());
 app.use(express.static('public'));
 
 app.get('/api/item/:itemID', (req, res) => {
-  cart.query(`select document from documents where _id = ${req.params.itemID}`,
+  const { itemID } = req.params;
+  cart.query(`select document from documents where _id = ${itemID}`,
     (err, data) => {
       if (err) {
         res.send(err);

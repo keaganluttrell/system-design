@@ -8,6 +8,9 @@ import ExtDetails from './ExtDetails';
 import Seller from './Seller';
 import BING_KEY from '../../keys/bing';
 
+const params = (new URL(window.location)).searchParams;
+const id = params.get('id') || 1;
+
 class App extends React.Component {
   constructor() {
     super();
@@ -57,10 +60,7 @@ class App extends React.Component {
   }
 
   getData(zip) {
-    const randNum = Math.floor(Math.random() * 100) + 1;
-    console.log(randNum);
-    axios.get(`/api/item/${randNum}`)
-      // axios.get('/api/item/0')
+    axios.get(`/api/item/${id}`)
       .then((item) => {
         const {
           rating, info, selectors, shipping, extDetails, shopPolicy, seller,

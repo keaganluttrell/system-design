@@ -1,11 +1,11 @@
-const { Sequelize } = require('sequelize');
+const { Client } = require('pg');
 
-const sequelize = new Sequelize('postgres://localhost:5432/cart'); // Example for postgres
-
-sequelize.authenticate()
-  .then(() => console.log('connected'))
-  .catch((e) => console.log(e));
+const cart = new Client({
+  host: 'localhost',
+  database: 'cart',
+});
+cart.connect();
 
 module.exports = {
-  sequelize,
+  cart,
 };

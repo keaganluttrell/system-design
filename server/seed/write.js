@@ -38,7 +38,10 @@ const file = fs.createWriteStream(path.resolve(__dirname, './output.txt'));
 
 file.on('error', (err) => console.log(err));
 
-for (let i = 1; i < 1001; i += 1) {
+for (let i = 1; i < 10001; i += 1) {
+  if (1000 % i === 0) {
+    console.log(`downloading... ${10000 / i}%`);
+  }
   const obj = {
     rating: {
       name: faker.commerce.productName(),

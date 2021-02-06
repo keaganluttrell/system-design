@@ -1,6 +1,6 @@
-const { Client } = require('pg');
+const { Pool } = require('pg');
 
-const cart = new Client({
+const cart = new Pool({
   host: 'localhost',
   database: 'cart',
 });

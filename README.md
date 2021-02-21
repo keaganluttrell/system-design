@@ -48,8 +48,7 @@ CLIENT ---> PROXY ---> SERVICE(S) ---> POSTGRES
 ### Results
 With 1 NginX load-balancer, 1 service, and 1 database I was able to get 32k requests per minute, under .1 seconds latency, and 0% error rate.
 To see what a maximal load would look like I took the liberty to add more services as needed. The free tier T2 micros only have 1 GB of RAM, so
-I needed to scale this database. I was able to keep a single Nginx instance and have 8 service instances with 2 databases. I was able to handle
-around 270k requests per minute, under 1 % error rate and under a quarter of a second latency.
+I needed to scale the database after reaching four services to fove services. I was able to keep a single Nginx instance and have 8 service instances with 2 databases. I was able to handle around 270k requests per minute, under 1 % error rate and under a quarter of a second latency.
 
 ### Conclusion
 I was able to meet the goal of 30k requests per minute while keeping costs down and also able to scale the database to meet the needs of a high

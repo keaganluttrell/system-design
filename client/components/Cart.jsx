@@ -7,6 +7,9 @@ import Selector from './Selector';
 import ExtDetails from './ExtDetails';
 import Seller from './Seller';
 import BING_KEY from '../../keys/bing';
+// Comment out line above
+// const BING_KEY = YOUR_BING_KEY
+// MORE INFO: https://www.bingmapsportal.com/
 
 const params = (new URL(window.location)).searchParams;
 const id = params.get('id') || 1;

@@ -87,7 +87,7 @@ class Seller extends React.Component {
         </button>
         <div className={policyCollap}>
           <div className="sellerContent">
-            <img src={imageURL} alt={name} />
+            <img src="http://loremflickr.com/320/240/portrait" alt={name} />
             <div className="seller">
               {name}
               <br />
